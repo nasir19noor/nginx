@@ -4,18 +4,8 @@ server {
 
   server_name prometheus.nasir.id www.prometheus.nasir.id;
 
-  return 301 https://$host$request_uri;
-}
-
-server {
-  listen 443 ssl;
-  server_name prometheus.nasir.id www.prometheus.nasir.id;
-
   access_log /var/log/nginx/prometheus.nasir.id.access.log;
   error_log /var/log/nginx/prometheus.nasir.id.error.log;
-
-  ssl_certificate /etc/letsencrypt/live/prometheus.nasir.id/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/prometheus.nasir.id/privkey.pem;
 
   location / {
   proxy_pass http://161.97.86.160:9090;
