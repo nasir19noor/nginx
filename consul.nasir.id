@@ -8,7 +8,7 @@ server {
   error_log /var/log/nginx/consul.nasir.id.error.log;
 
   location / {
-  proxy_pass http://161.97.86.160:8500;
+  proxy_pass http://34.87.64.103:8500;
   proxy_set_header Host $host;
   proxy_set_header X-Real-IP $remote_addr;
   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
